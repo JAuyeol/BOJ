@@ -5,8 +5,8 @@ public class Main {
 		
 		int year = sc.nextInt();
 		
-		if(year%4==0 && year%100!=0 || year%400==0) System.out.println(1);
-		else System.out.println(0);
+		int sol = (year%4==0 && year%100!=0 || year%400==0)?1:0;
+		System.out.println(sol);
 	
 	}
 }
