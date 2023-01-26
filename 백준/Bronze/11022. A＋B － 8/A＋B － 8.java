@@ -1,27 +1,27 @@
-import java.util.Scanner;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int i;
-		int n = sc.nextInt();
-		int a[] = new int[n]; //이전과 다르게 배열로 선언 
-		int b[] = new int[n]; // 숫자까지 출력하기 위해서 선언한 것
-		int array[] = new int[n];
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		for(i = 0;i < n;i++) 
-		{
-			a[i] = sc.nextInt();
-			b[i] =sc.nextInt();
-			array[i] = a[i]+b[i];
-		}
+		int n = Integer.parseInt(br.readLine());
 		
-		for(i = 0;i < n;i++) 
-		{
-			System.out.print("Case #");
-			System.out.print((i+1)+": ");
-			System.out.println(a[i]+" + "+b[i]+" = "+array[i]);
+		for(int i=0;i<n;i++) {
+			String str = br.readLine();
+			int a = Integer.parseInt(str.split(" ")[0]);
+			int b = Integer.parseInt(str.split(" ")[1]);
+			
+			bw.write("Case #" + (i+1) + ": " + a + " + " + b + " = " + (a+b) + "\n");
 		}
+		br.close();
+		bw.flush();
+		bw.close();
+
 		
 	}
 
