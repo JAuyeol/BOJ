@@ -1,28 +1,31 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class Main {
-	
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int n = sc.nextInt(); // 입력을 받는다.
-		int x = n; // n의 값을 복사
-		int count = 0; // 사이클 횟수 
-		
-		
-		while(true) {
-			int ten = x/10; // 십의 자리 
-			int one = x%10; // 일의 자리 
-			
-			x = one * 10 + (ten + one) % 10;
-			
-			count++;
-			
-			if(n==x)  // while을 통해 계산 > n과 x가 같아지게 되면 break 
-				break;
-		}
-		System.out.println(count);
-		sc.close();
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		int n = Integer.parseInt(br.readLine());
+        int x = n;
+        int count = 0; 
+        
+        while (true) {
+            int ten = x / 10; 
+            int one = x % 10; 
+ 
+            x = one * 10 + (ten + one) % 10; 
+            
+            count++;
+ 
+            if(x == n) break;
+           
+        }
+ 
+        System.out.println(count);
+        
+        br.close();
 	}
 }
+
