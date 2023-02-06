@@ -1,28 +1,26 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 
 public class Main {
-	
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int n = sc.nextInt(); // 정수의 개수 n 입력받기
-		int array1[] = new int[n];
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+		int n = Integer.parseInt(br.readLine());
 		int count = 0; 
 		
-		for(int i=0;i<array1.length;i++) {
-			array1[i] = sc.nextInt(); // array1 배열에 값들을 저장
-			
-		}
+        StringTokenizer strtk = new StringTokenizer(br.readLine());
+        
+		int x = Integer.parseInt(br.readLine());
 		
-		int x = sc.nextInt();
-		
-		for(int i=0;i<array1.length;i++) {
-			if(array1[i]==x) count++;
-		}
-		
+        for(int i=0;i<n;i++) {
+        	if(Integer.parseInt(strtk.nextToken())==x)
+        		count++;
+        }
 		System.out.println(count);
-		
-		sc.close();
+        br.close();
 	}
 }
+
