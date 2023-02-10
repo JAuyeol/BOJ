@@ -1,28 +1,24 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer strtk = new StringTokenizer(br.readLine()," ");
+	    
+		int n = Integer.parseInt(strtk.nextToken());
+		int x = Integer.parseInt(strtk.nextToken());
 		
-		Scanner sc = new Scanner(System.in);
+		strtk = new StringTokenizer(br.readLine()," "); // 두 번째 줄 입력을 위해 다시 선언
 		
-		int n = sc.nextInt(); // 정수의 개수 n 입력받기
-		int x = sc.nextInt(); // 정수 X
-		ArrayList<Integer> arrList = new ArrayList<Integer>(n);
-		
-		int array1[] = new int[n];
-		
-		for(int i=0;i<array1.length;i++) {
-			array1[i] = sc.nextInt();
-			if(array1[i]<x) arrList.add(array1[i]);
-		}
-		
-		int arrSize =arrList.size();
-		Integer ansArray[] = arrList.toArray(new Integer[arrSize]);
-		
-		for(int i=0;i<ansArray.length;i++) 
-			System.out.print(ansArray[i]+" ");
-		
-		sc.close();
+		for(int i=0;i<n;i++) {
+        	int ans = Integer.parseInt(strtk.nextToken());	
+        	if(ans<x) System.out.print(ans+" ");
+        }
+                
 	}
 }
+
