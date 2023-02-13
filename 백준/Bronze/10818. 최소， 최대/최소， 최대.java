@@ -1,28 +1,33 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		Scanner sc = new Scanner(System.in);
+		int n = Integer.parseInt(br.readLine());
 		
-		int n = sc.nextInt(); // 정수의 개수 n 입력받기
+		StringTokenizer strtk = new StringTokenizer(br.readLine()," ");
 		
 		int array1[] = new int[n];
 		
 		for(int i=0;i<array1.length;i++) {
-			array1[i] = sc.nextInt();
+			array1[i] = Integer.parseInt(strtk.nextToken());
 		}
-		
-		sc.close();
 		
 		int min = array1[0];
 		int max = array1[0];
 		
 		for(int i=0;i<array1.length;i++) {
-			if(min>array1[i]) min = array1[i];
-			if(max<array1[i]) max = array1[i];
+			
+			if(array1[i]>max) max = array1[i];
+			if(array1[i]<min) min = array1[i];
 		}
 		System.out.println(min+" "+max);
 		
 	}
 }
+
