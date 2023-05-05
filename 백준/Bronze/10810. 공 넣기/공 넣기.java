@@ -1,31 +1,29 @@
 import java.util.Scanner;
+
 public class Main {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		
-		int basket = sc.nextInt();
-		int n = sc.nextInt(); // 반복할 횟수 
-		int first = 0;
-		int last = 0;
-		int num = 0;
-		int array1[] = new int[basket]; // 5개의 바구니 만듦
+		int busket = sc.nextInt(); // 5개의 바구니
+		int count = sc.nextInt(); // 4번 실행 
 		
-		for(int i=0;i<n;i++) {
-			 first = sc.nextInt()-1;
-			 last = sc.nextInt()-1;
-			 num = sc.nextInt();
-			 
-			 for(int j=first;j<=last;j++) {
-				 array1[j] = num;
-			 }
+		int n1, n2, ball = 0; // n1번째 바구니부터 n2번째 바구니, ball
+		
+		int array1[] = new int[busket]; // 5개의 배열(바구니) 생성 
+		
+		for(int i=0;i<count;i++) { // 4번 실행
+			n1 = sc.nextInt();  // n1번째 바구니 입력받기 1번째 > 0번째
+			n2 = sc.nextInt(); // n2번째까지의 바구니 입력받기 2번째 바구니까지 > 1번째
+			ball = sc.nextInt(); // 넣을 공 입력받기 
 			
+			for(int j=n1-1;j<=n2-1;j++) { // n1 ~ n2 
+				array1[j] = ball;
+			}
 		}
 		
-		for(int i=0;i<array1.length;i++) {
+		for(int i=0;i<busket;i++) {
 			System.out.print(array1[i]+" ");
 		}
-		sc.close();
-		
 	}
+}
 
-}	
