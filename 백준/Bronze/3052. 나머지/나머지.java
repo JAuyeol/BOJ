@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +8,8 @@ public class Main {
 		int array1[] = new int[10];
 		int compare[] = new int[42];
 		int count = 0, num = 0;
+		
+		Arrays.fill(compare, 0);
 		
 		for(int i=0;i<array1.length;i++) {
 			array1[i] = sc.nextInt();
