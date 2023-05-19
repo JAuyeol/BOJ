@@ -1,36 +1,44 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer strtk = new StringTokenizer(br.readLine()," ");
 		
-		int n = sc.nextInt(); // 바구니 개수 입력 
-		int line = sc.nextInt(); // 입력 줄 개수	
-		int basket[] = new int[n];
+		int n = Integer.parseInt(strtk.nextToken());
+		int count = Integer.parseInt(strtk.nextToken()); 
 		
-		for(int i=0;i<basket.length;i++) {
-			basket[i] = i+1;
+		int temp = 0;
+		
+		int busket[] = new int[n];
+		for(int i=0;i<busket.length;i++) {
+			busket[i] = i+1;
 		}
 		
-		for(int i=0;i<line;i++) {  
-			int a = sc.nextInt()-1;
-			int b = sc.nextInt()-1;
-
+		for(int i=0;i<count;i++) {
+			strtk = new StringTokenizer(br.readLine()," ");
+			
+			int a = Integer.parseInt(strtk.nextToken())-1;
+			int b = Integer.parseInt(strtk.nextToken())-1;
 			
 			while(a<b) {
-				int temp = basket[b];
-				basket[b] = basket[a];
-				basket[a] = temp;
+				temp = busket[a];
+				busket[a] = busket[b];
+				busket[b] = temp;
 				a++;
 				b--;
 			}
-			
 		}
-		sc.close();
-		for(int i=0;i<basket.length;i++) {
-			System.out.print(basket[i]+" ");
+		
+		br.close();
+		
+		for(int i=0;i<busket.length;i++) {
+			System.out.print(busket[i]+" ");
 		}
 		
 	}
-
 }
