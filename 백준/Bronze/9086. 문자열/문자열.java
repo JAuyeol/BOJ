@@ -4,13 +4,13 @@ public class Main {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		
-		int n = sc.nextInt(); // 입력받을 횟수
+		int n = sc.nextInt(); 
 		
 		String name[] = new String[n];
 		
 		for(int i=0;i<n;i++) {
-			String a = sc.next();
-			name[i] = a.substring(0,1)+a.substring(a.length()-1,a.length());
+			String str = sc.next();
+			name[i] = str.substring(0,1)+ str.substring(str.length()-1,str.length());
 		}
 		
 		sc.close();
