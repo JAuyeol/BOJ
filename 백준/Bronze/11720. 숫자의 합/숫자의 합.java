@@ -1,20 +1,24 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int n = sc.nextInt();
-		String str = sc.next();
+		int n = Integer.parseInt(br.readLine());
 		int sum = 0;
-		
-		sc.close();
+		String[] str = br.readLine().split("");
+		br.close();
 		
 		for(int i=0;i<n;i++) {
-			sum += str.charAt(i) - '0'; // 아스키 코드의 0이 48번째이기 때문에
+			sum += Integer.parseInt(str[i]);
 		}
 		
+		
 		System.out.println(sum);
+		
+		
 	}
 
-}
+}	
