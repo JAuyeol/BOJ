@@ -5,12 +5,17 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		String str = sc.next();
+		
+		sc.close();
+		StringBuilder sb = new StringBuilder(str);
+		sb.reverse();
+		
 		sc.close();
 		int len = str.length();
 		int ans = 1;
 		
 		for(int i=0;i<len/2;i++) {
-			if(str.charAt(i)!=str.charAt(len-1-i)) {
+			if(str.charAt(i) != sb.charAt(i)) {
 				ans = 0;
 			}
 		}
